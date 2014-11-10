@@ -277,7 +277,7 @@ app.directive('onLastRepeatSlider', function() {
   		this.setChartTarjeta();
   	}
 
-  	this.setChartTarjeta();
+  	// this.setChartTarjeta();
 
 
   	////////////////////////DELEGACIONES

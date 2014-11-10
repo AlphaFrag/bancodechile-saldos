@@ -31,34 +31,34 @@
                                       "retenciones24hrsomas" : 0
                                    },
                   "ultimosCheques" : [{
-                                        "numero" : "0001",
-                                        "fecha" : "09 / 01 / 2014",
+                                        "numero" : "0004",
+                                        "fecha" : "30 / 12 / 2014",
                                         "estado" : "Pagado",
-                                        "monto" : 55000,
-                                        "imagen" : "img/examples/cheque.jpg"
-                                     },{
-                                        "numero" : "0002",
-                                        "fecha" : "09 / 01 / 2014",
-                                        "estado" : "Pagado",
-                                        "monto" : 55000,
+                                        "monto" : 23500,
                                         "imagen" : "img/examples/cheque.jpg"
                                      },{
                                         "numero" : "0003",
-                                        "fecha" : "09 / 01 / 2014",
+                                        "fecha" : "01 / 11 / 2014",
+                                        "estado" : "Pendiente",
+                                        "monto" : 850300,
+                                        "imagen" : "img/examples/cheque.jpg"
+                                     },{
+                                        "numero" : "0002",
+                                        "fecha" : "11 / 05 / 2014",
                                         "estado" : "Pagado",
                                         "monto" : 55000,
                                         "imagen" : "img/examples/cheque.jpg"
                                      },{
-                                        "numero" : "0004",
-                                        "fecha" : "09 / 01 / 2014",
+                                        "numero" : "0001",
+                                        "fecha" : "12 / 04 / 2014",
                                         "estado" : "Pagado",
-                                        "monto" : 55000,
+                                        "monto" : 1120900,
                                         "imagen" : "img/examples/cheque.jpg"
                                      }],
                   "lineaCredito" : {
                                       "cuenta" : "00-111-22222-03",
-                                      "autorizado" : 1000000,
-                                      "utilizado" : 0
+                                      "autorizado" : 1100000,
+                                      "utilizado" : 5000
                                    },                      
                   "charts" : {
                         "fechaActualizada" : "17 / 07 / 2014",
@@ -90,12 +90,12 @@
                                                               "documento" : false
                                                             }]
                                          },{
-                                            "fecha" : "30 / 07 / 2014",
+                                            "fecha" : "25 / 07 / 2014",
                                             "movimientos" : [{
                                                               "nombre" : "Pago Chilectra S.A.",
                                                               "monto" : 10000,
                                                               "ingreso" : false,
-                                                              "documento" : false
+                                                              "documento" : "0001"
                                                             },{
                                                               "nombre" : "Transferencia desde tercero",
                                                               "monto" : 1000000,
