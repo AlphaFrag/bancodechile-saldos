@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" ng-app="saldosApp">
+<head>
+  <meta charset="utf-8">
+  <title>Banco de Chile - Saldos</title>
+  <meta name="description" content="Aplicación bancaria" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+    <script src="js/less.js" type="text/javascript"></script>
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/"
+      };
+    </script>
+    <script src="js/less.js"></script>
+
+
+    <!-- TODO: cargar scripts dependiendo del caso.  -->
+    <script src="js/jquery.js"></script>
+    <script src="js/rut-validator.js"></script>
+    <script src="js/ninja-slider.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/highstock.js"></script> 
+    <script src="js/highcharts-ng.js"></script>
+    <script type="text/javascript" src="js/modules/app.js"></script>
+    <script type="text/javascript" src="js/modules/highchart-app.js"></script>
+    <script type="text/javascript" src="js/controllers/saldos.js"></script>
+
+</head>
+<body class="app-class {{aplicacion.slug}} {{banco.slug}}" ng-class="{'deployed-menu' : isDeployedMenu}" ng-controller="saldosGetData" ng-view>
+
+</body>
+</html>

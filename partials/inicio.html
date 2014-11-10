@@ -1,0 +1,94 @@
+<header>
+	<img class="menu-left-position" ng-src="{{aplicacion.logoMin}}" alt="Saldos" />
+	<img ng-src="{{banco.logo}}" alt="Banco de Chile" />
+	<button class="menu-button" ng-click="main.deployMenu()"><i class="icon menu"></i>Menú</button>
+	<div class="menu-right-position light-gray-bg">
+		<div class="main-navigation dark-gray-bg">
+			<div class="box-content-wrapp ohidden">
+				<img class="content-left" ng-src="{{userData.avatar}}" alt="avatar" />
+				<div class="content-right">
+					<h3 class="name">{{userData.nombre}}</h3>
+					<span class="metadata">{{userData.rut}}</span>
+				</div>
+			</div>
+			<div class="disclaimer box-content-wrapp ohidden" ng-hide="userData.social">
+				<p class="exclamation blackest min">Recuerda vincular tu cuenta a tus <strong>redes sociales</strong> para que tus amigos puedan buscarte.</p>
+			</div>
+			<nav class="main-nav">
+				<a href="/inicio" title="Ir al inicio"><i class="icon home rounded"></i>Inicio</a>
+				<a href="/ayuda" title="Ir a la ayuda"><i class="icon help rounded"></i>Ayuda</a>
+				<a href="/configuracion" title="Ir a la configuracion"><i class="icon settings rounded"></i>Configuración</a>
+				<a href="/salir" title="salir"><i class="icon logout rounded red-bg"></i>Salir</a>
+			</nav>
+		</div>
+		<nav class="second-navigation">
+			<a href="/inicio" title="Ir al inicio">Saldos</a>
+			<a href="/mensajes" title="Ir al inicio">Mensajes ({{mensajesPendientes}})</a>
+		</nav>
+		<div class="box-content-wrapp in-bottom-position">
+			<a href="#" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
+		</div>
+	</div>
+</header>
+<main>
+	<section class="box-content-wrapp" ng-show="ad.texto">
+		<a href="{{ad.url}}" class="ads orange-bg" title="Ir al enlace">
+			<p class="small-text">{{ad.texto}}</p>
+			<i class="icon big-next"></i>
+		</a>
+	</section>
+	<section class="slider-wrapp">
+		<div class="slider">
+			<ul class="content-slider-items">
+				<li ng-repeat="producto in userData.productos" on-last-repeat-slider>
+					<span class="bold-white centered">{{producto.nombre}} N° {{producto.numeroDesplegable}}</span>
+					<span class="small-white-title centered">Saldo Disponible</span>
+					<span class="big-number centered">${{producto.disponible | pesos}}</span>
+					<span class="small-white-title centered" ng-show="producto.dolar">US${{producto.dolar | pesos}}</span>
+					<div class="meta-data-group ohidden">
+						<div ng-repeat="extra in producto.extras">
+							<span class="label-key">{{extra.nombre}}</span>
+							<span class="label-value">${{extra.valor | pesos}}</span>
+						</div>
+					</div>
+					<button class="btn ghost-white automatic" title="Ver más" ng-click="main.goToView(producto.vista, producto)">Ver más</button>
+				</li>
+			</ul>
+			<div class="control centered-wrapp">
+				<div class="centered-element">
+					<button class="slide-control" ng-class="{'active':$first}" data-slide="{{$index}}" ng-click="main.moveSlideTo($index)" ng-repeat="producto in userData.productos"></button>
+				</div> 
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2 class="block-title">Mis aplicaciones</h2>
+		<div class="ohidden">
+			<a href="#" class="column-4 centered-app">
+				<img src="img/examples/transferencias_logo.png" alt="Saldos" />
+				<span class="label-small centered">Saldos</span>
+			</a>
+			<a href="#" class="column-4 centered-app">
+				<img src="img/examples/transferencias_logo.png" alt="Banca móvil" />
+				<span class="label-small centered">Banca móvil</span>
+			</a>
+			<a href="#" class="column-4 last centered-app no-in-the-phone">
+				<img src="img/examples/transferencias_logo.png" alt="Beneficio" />
+				<span class="label-small centered">Beneficio</span>
+			</a>
+			<a href="#" class="column-4 centered-app no-in-the-phone">
+				<img src="img/examples/transferencias_logo.png" alt="Transferencias" />
+				<span class="label-small centered">Transferencias</span>
+			</a>
+			<a href="#" class="column-4 centered-app no-in-the-phone">
+				<img src="img/examples/transferencias_logo.png" alt="Yocobro" />
+				<span class="label-small centered">Yocobro</span>
+			</a>
+			<a href="#" class="column-4 last centered-app">
+				<img src="img/examples/transferencias_logo.png" alt="Yopago" />
+				<span class="label-small centered">Yopago</span>
+			</a>
+		</div>
+	</section>
+	<hr class="fixed-border"></hr>
+</main>

@@ -1,0 +1,28 @@
+<header>
+	<img ng-src="{{banco.logo}}" alt="Banco de Chile" />
+</header>
+<main ng-controller="generalFormController as formCtrl">
+	<div class="txt-header">
+		<h1 class="centered">Olvido clave de internet</h1>
+		<p class="centered">Para crear una nueva clave de internet ingrese su <strong>RUT</strong></p>
+	</div>
+	<div class="wrapping">
+		<form name="forgotForm" class="form-spec"  ng-submit="formCtrl.validateRut()" novalidate>
+			<label for="rut">
+			<p class="label">RUT</p>
+			<input id="rut" type="text" name="rut" ng-model="rut" ng-class="{'invalid-input': isSubmitted && !isValidRut}" placeholder="Ingrese su RUT" required />
+			<span class="error-message" ng-show ="isSubmitted && !isValidRut">Debe ingresar un RUT válido</span>
+			</label>
+
+			<label for="clave-internet">
+			<p class="label">Clave internet</p>
+			<input id="clave-internet" type="password" name="claveInternet" ng-model="claveInternet" ng-class="{'invalid-input': isSubmitted && !isValidPass}" placeholder="Ingrese su clave de internet" required />
+			<span class="error-message" ng-show ="isSubmitted && !isValidPass">Debe ingresar una clave</span>
+			</label>
+
+			<div class="wrapping">
+				<input class="btn green-btn" type="submit" value="Continuar"/>
+			</div>
+		</form>
+	</div>
+</main>

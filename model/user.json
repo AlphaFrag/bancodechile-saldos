@@ -1,0 +1,191 @@
+{
+  "nombre" : "Jorge Codina",
+  "rut" : "16301806 - 3",
+  "avatar" : "img/examples/avatar.svg",
+  "social" : false,
+  "ads" : {
+    "url": "http://www.example.com",
+    "texto": "¿Deseas hacer una transferencia? ingresa a Transferencias del BCH"
+  },
+  "productos" : [{
+                  "nombre" : "Cuenta corriente",
+                  "nombreCorto": "C.Corriente",
+                  "numero" : "00-111-22222-03",
+                  "numeroDesplegable" : "00-111-22222-03",
+                  "numeroCorto" : "...222-03",
+                  "disponible" : 1200000,
+                  "vista" : "corriente",
+                  "extras" : [{
+                              "nombre" : "Línea de crédito",
+                              "valor" : 1000000,
+                              "destacado" : true
+                             },{
+                              "nombre" : "Línea Sobregiro Pactado",
+                              "valor" : 800000,
+                              "destacado" : true
+                             }],
+                  "saldoDetalle" : {
+                                      "contable" : 1200000,
+                                      "lineaSobregiroPactado" : 0,
+                                      "retenciones24hrs" : 10,
+                                      "retenciones24hrsomas" : 0
+                                   },
+                  "ultimosCheques" : [{
+                                        "numero" : "0001",
+                                        "fecha" : "09 / 01 / 2014",
+                                        "estado" : "Pagado",
+                                        "monto" : 55000,
+                                        "imagen" : "img/examples/cheque.jpg"
+                                     },{
+                                        "numero" : "0002",
+                                        "fecha" : "09 / 01 / 2014",
+                                        "estado" : "Pagado",
+                                        "monto" : 55000,
+                                        "imagen" : "img/examples/cheque.jpg"
+                                     },{
+                                        "numero" : "0003",
+                                        "fecha" : "09 / 01 / 2014",
+                                        "estado" : "Pagado",
+                                        "monto" : 55000,
+                                        "imagen" : "img/examples/cheque.jpg"
+                                     },{
+                                        "numero" : "0004",
+                                        "fecha" : "09 / 01 / 2014",
+                                        "estado" : "Pagado",
+                                        "monto" : 55000,
+                                        "imagen" : "img/examples/cheque.jpg"
+                                     }],
+                  "lineaCredito" : {
+                                      "cuenta" : "00-111-22222-03",
+                                      "autorizado" : 1000000,
+                                      "utilizado" : 0
+                                   },                      
+                  "charts" : {
+                        "fechaActualizada" : "17 / 07 / 2014",
+                        "color" : "#003579",
+                        "series" : [{
+                                      "ano" : "2013",
+                                      "data" : [200000, 400000, 600000]
+                                   },{
+                                      "ano" : "2014",
+                                      "data" : [350000, 400000, 100000]
+                                   }]
+                  },
+                  "ultimosMovimientos" : [{
+                                            "fecha" : "30 / 07 / 2014",
+                                            "movimientos" : [{
+                                                              "nombre" : "Pago Chilectra S.A.",
+                                                              "monto" : 10000,
+                                                              "ingreso" : false,
+                                                              "documento" : "0004"
+                                                            },{
+                                                              "nombre" : "Transferencia desde tercero",
+                                                              "monto" : 1000000,
+                                                              "ingreso" : true,
+                                                              "documento" : false
+                                                            },{
+                                                              "nombre" : "Giro cajero automático",
+                                                              "monto" : 80000,
+                                                              "ingreso" : false,
+                                                              "documento" : false
+                                                            }]
+                                         },{
+                                            "fecha" : "30 / 07 / 2014",
+                                            "movimientos" : [{
+                                                              "nombre" : "Pago Chilectra S.A.",
+                                                              "monto" : 10000,
+                                                              "ingreso" : false,
+                                                              "documento" : false
+                                                            },{
+                                                              "nombre" : "Transferencia desde tercero",
+                                                              "monto" : 1000000,
+                                                              "ingreso" : true,
+                                                              "documento" : false
+                                                            },{
+                                                              "nombre" : "Giro cajero automático",
+                                                              "monto" : 80000,
+                                                              "ingreso" : false,
+                                                              "documento" : false
+                                                            },{
+                                                              "nombre" : "Giro cajero automático",
+                                                              "monto" : 80000,
+                                                              "ingreso" : false,
+                                                              "documento" : false
+                                                            },{
+                                                              "nombre" : "Giro cajero automático",
+                                                              "monto" : 80000,
+                                                              "ingreso" : false,
+                                                              "documento" : false
+                                                            }]
+                                         }]
+                },{
+                  "nombre" : "Tarjeta de crédito VISA",
+                  "nombreCorto": "T.Crédito VISA",
+                  "numero" : "00-111-111111111111",
+                  "numeroDesplegable" : "...1111",
+                  "numeroCorto" : "...1111",
+                  "disponible" : 200000 ,
+                  "dolar" : 1000,
+                  "vista" : "tarjeta",
+                  "extras" : [{
+                              "nombre" : "Saldo utilizado ($)",
+                              "valor" : 200000
+                             },{
+                              "nombre" : "Saldo utilizado (US$)",
+                              "valor" : 0
+                             }],
+                  "saldoDetalle" : {
+                                      "contable" : 1200000,
+                                      "lineaSobregiroPactado" : 0,
+                                      "retenciones24hrs" : 10,
+                                      "retenciones24hrsomas" : 0
+                                   },
+                  "cupoDolar" : {
+                                      "autorizado" : 1000000,
+                                      "utilizado" : 0
+                                   },
+                  "charts" : {
+                        "fechaActualizada" : "17 / 07 / 2014",
+                        "color" : "#003579",
+                        "series" : [{
+                                      "ano" : "2013",
+                                      "data" : [200000, 400000, 600000]
+                                   },{
+                                      "ano" : "2014",
+                                      "data" : [350000, 400000, 100000]
+                                   }]
+                  }
+                }],
+  "mensajes" : [{
+                 "tipo" : "beneficio",
+                 "fecha" : "30 / 07 / 2014",
+                 "visto" : false,
+                 "titulo" : "Con tus compras gana un bono de Dólares-Premio",
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+               },{
+                 "tipo" : "oferta",
+                 "fecha" : "30 / 07 / 2014",
+                 "visto" : false,
+                 "titulo" : "Con tus compras gana un bono de Dólares-Premio",
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+               },{
+                 "tipo" : "oferta",
+                 "fecha" : "30 / 07 / 2014",
+                 "visto" : true,
+                 "titulo" : "Con tus compras gana un bono de Dólares-Premio",
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+               },{
+                 "tipo" : "oferta",
+                 "fecha" : "30 / 07 / 2014",
+                 "visto" : true,
+                 "titulo" : "Con tus compras gana un bono de Dólares-Premio",
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+               },{
+                 "tipo" : "oferta",
+                 "fecha" : "30 / 07 / 2014",
+                 "visto" : true,
+                 "titulo" : "Con tus compras gana un bono de Dólares-Premio",
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+               }]
+}
+
