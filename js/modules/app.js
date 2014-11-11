@@ -22,6 +22,10 @@ saldosApp.config(['$routeProvider', '$controllerProvider', '$locationProvider',
         templateUrl: 'partials/documento.html',
         controller: 'mainController as main'
       }).
+      when('/config', {
+        templateUrl: 'partials/configuracion.html',
+        controller: 'mainController as main'
+      }).
       otherwise({
         templateUrl: 'templates/acceso.html'
       });

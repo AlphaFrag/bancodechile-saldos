@@ -1,0 +1,28 @@
+<!-- este header es distinto al header.html pues muestra el logo del banco en vez del botón "volver" -->
+<header>
+	<img class="menu-left-position" ng-src="{{aplicacion.logoMin}}" alt="Saldos" />
+	<img ng-src="{{banco.logo}}" alt="Banco de Chile" />
+	<button class="menu-button" ng-click="main.deployMenu()"><i class="icon menu"></i>Menú</button>
+	<div class="menu-right-position light-gray-bg">
+		<div class="main-navigation dark-gray-bg">
+			<div class="box-content-wrapp ohidden">
+				<img class="content-left" ng-src="{{userData.avatar}}" alt="avatar" />
+				<div class="content-right">
+					<h3 class="name">{{userData.nombre}}</h3>
+					<span class="metadata">{{userData.rut}}</span>
+				</div>
+			</div>
+			<div class="disclaimer box-content-wrapp ohidden" ng-hide="userData.social">
+				<p class="exclamation blackest min">Recuerda vincular tu cuenta a tus <strong>redes sociales</strong> para que tus amigos puedan buscarte.</p>
+			</div>
+			<ng-include src="'partials/menu.html'"></ng-include>
+		</div>
+		<nav class="second-navigation">
+			<a href="/inicio" title="Ir al inicio">Saldos</a>
+			<a href="/mensajes" title="Ir al inicio">Mensajes ({{mensajesPendientes}})</a>
+		</nav>
+		<div class="box-content-wrapp in-bottom-position">
+			<a href="#" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
+		</div>
+	</div>
+</header>

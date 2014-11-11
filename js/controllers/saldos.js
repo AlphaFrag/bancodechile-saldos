@@ -294,11 +294,13 @@ app.directive('onLastRepeatSlider', function() {
 
   	this.goToView = function(view, producto){
   		productService.addProduct(producto);
+  		currentProduct.titulo='Saldo '+currentProduct.nombre
   		$location.path(view)//.replace();
   	}
 
   	this.goToDocument = function(cheque){
   		var documentObj;
+  		currentProduct.titulo='Saldo '+currentProduct.nombre
   		currentProduct.ultimosCheques.forEach(function (element, index) {
 	    	if(element.numero === cheque){
 	    		 documentObj = element;
@@ -306,6 +308,12 @@ app.directive('onLastRepeatSlider', function() {
 		});
 		productService.addDocument(documentObj);
   		$location.path('document')//.replace();
+  	}
+
+  	this.goToConfig = function() {
+  		currentProduct.titulo='Configuración'
+  		$location.path('config')//.replace();
+
   	}
 
   	this.goBack = function(){
