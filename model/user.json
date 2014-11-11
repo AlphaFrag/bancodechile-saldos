@@ -8,6 +8,44 @@
     "texto": "¿Deseas hacer una transferencia? ingresa a Transferencias del BCH"
   },
   "productos" : [{
+                  "nombre" : "Tarjeta de crédito VISA",
+                  "nombreCorto": "T.Crédito VISA",
+                  "numero" : "00-111-111111111111",
+                  "numeroDesplegable" : "...1111",
+                  "numeroCorto" : "...1111",
+                  "disponible" : 200000 ,
+                  "dolar" : 1000,
+                  "vista" : "tarjeta",
+                  "extras" : [{
+                              "nombre" : "Saldo utilizado ($)",
+                              "valor" : 200000
+                             },{
+                              "nombre" : "Saldo utilizado (US$)",
+                              "valor" : 0
+                             }],
+                  "saldoDetalle" : {
+                                      "contable" : 1200000,
+                                      "lineaSobregiroPactado" : 0,
+                                      "retenciones24hrs" : 10,
+                                      "retenciones24hrsomas" : 0
+                                   },
+                  "cupoDolar" : {
+                                      "autorizado" : 1000000,
+                                      "utilizado" : 0
+                                   },
+                  "charts" : {
+                        "fechaActualizada" : "17 / 07 / 2014",
+                        "color" : "#003579",
+                        "series" : [{
+                                      "ano" : "2013",
+                                      "data" : [200000, 400000, 600000]
+                                   },{
+                                      "ano" : "2014",
+                                      "data" : [350000, 400000, 100000]
+                                   }]
+                  }
+                },
+                {
                   "nombre" : "Cuenta corriente",
                   "nombreCorto": "C.Corriente",
                   "numero" : "00-111-22222-03",
@@ -118,44 +156,8 @@
                                                               "documento" : false
                                                             }]
                                          }]
-                },{
-                  "nombre" : "Tarjeta de crédito VISA",
-                  "nombreCorto": "T.Crédito VISA",
-                  "numero" : "00-111-111111111111",
-                  "numeroDesplegable" : "...1111",
-                  "numeroCorto" : "...1111",
-                  "disponible" : 200000 ,
-                  "dolar" : 1000,
-                  "vista" : "tarjeta",
-                  "extras" : [{
-                              "nombre" : "Saldo utilizado ($)",
-                              "valor" : 200000
-                             },{
-                              "nombre" : "Saldo utilizado (US$)",
-                              "valor" : 0
-                             }],
-                  "saldoDetalle" : {
-                                      "contable" : 1200000,
-                                      "lineaSobregiroPactado" : 0,
-                                      "retenciones24hrs" : 10,
-                                      "retenciones24hrsomas" : 0
-                                   },
-                  "cupoDolar" : {
-                                      "autorizado" : 1000000,
-                                      "utilizado" : 0
-                                   },
-                  "charts" : {
-                        "fechaActualizada" : "17 / 07 / 2014",
-                        "color" : "#003579",
-                        "series" : [{
-                                      "ano" : "2013",
-                                      "data" : [200000, 400000, 600000]
-                                   },{
-                                      "ano" : "2014",
-                                      "data" : [350000, 400000, 100000]
-                                   }]
-                  }
-                }],
+                }
+                ],
   "mensajes" : [{
                  "tipo" : "beneficio",
                  "fecha" : "30 / 07 / 2014",

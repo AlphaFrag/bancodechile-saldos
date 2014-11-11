@@ -34,4 +34,119 @@
 	<span class="label-data-title centered wrapp white-bg"><strong class="ng-binding">Cupo Normal($)</strong></span>
 	<highchart class="chart bbottom" config="chartConfig" ></highchart>
 	<h2 class="block-title">Detalle de Saldo</h2>
+	<!-- copiado de corriente -->
+		<section class="white-bg">
+		<div class="gray-block">
+			<span class="content-left half label-data-title"><strong>{{currentProduct.nombre}}</strong></span>
+			<span class="content-right half label-data-title"><strong>{{currentProduct.numero}}</strong></span>
+		</div>
+		<div class="wrapp btm bbottom">
+			<span class="content-left min-label-data-title">Disponible</span>
+			<span class="content-right min-label-data-title green-important"><strong>${{currentProduct.disponible | pesos}}</strong></span>
+			<span class="content-left min-label-data-title">Contable</span>
+			<span class="content-right min-label-data-title">${{currentProduct.saldoDetalle.contable | pesos}}</span>
+		</div>
+		<div class="wrapp btm bbottom">
+		 	<span class="min-label-data-title"><strong>Últimos Cheques</strong></span>
+		 	<div class="floated-wrapp">
+		 		<a href="" title="Ver cheque 0004" ng-repeat="cheque in currentProduct.ultimosCheques" ng-click="main.goToDocument(cheque.numero)">{{cheque.numero}}</a>
+		 	</div>
+		</div>
+		<div class="wrapp btm bbottom">
+			<span class="content-left min-label-data-title">Retenciones 24hrs.</span>
+			<span class="content-right min-label-data-title">${{currentProduct.saldoDetalle.retenciones24hrs | pesos}}</span>
+			<span class="content-left min-label-data-title">Retenciones 24hrs. o más</span>
+			<span class="content-right min-label-data-title">${{currentProduct.saldoDetalle.retenciones24hrsomas | pesos}}</span>
+			<span class="content-left min-label-data-title">Total de retenciones</span>
+			<span class="content-right min-label-data-title"><strong>${{currentProduct.saldoDetalle.retenciones24hrs + currentProduct.saldoDetalle.retenciones24hrsomas | pesos}}</strong></span>
+		</div>
+		<div class="gray-block">
+			<span class="content-left half label-data-title"><strong>Línea de crédito</strong></span>
+			<span class="content-right half label-data-title"><strong>{{currentProduct.lineaCredito.cuenta}}</strong></span>
+		</div>
+		<div class="wrapp btm bbottom">
+			<span class="content-left min-label-data-title">Autorizado</span>
+			<span class="content-right min-label-data-title">${{currentProduct.lineaCredito.autorizado | pesos}}</span>
+			<span class="content-left min-label-data-title">Utilizado</span>
+			<span class="content-right min-label-data-title">${{currentProduct.lineaCredito.utilizado | pesos}}</span>
+			<span class="content-left min-label-data-title">Disponible</span>
+			<span class="content-right min-label-data-title green-important"><strong>${{currentProduct.lineaCredito.autorizado - currentProduct.lineaCredito.utilizado | pesos}}</strong></span>
+		</div>
+	</section>
+	<section class="white-bg">
+
+			<style type="text/css">
+			.selectorFacturacion ul {
+				margin:0;
+				padding:0;
+				/*margin-bottom:100px;*/
+				overflow: auto;
+				border-bottom: 1px solid #D0D8E1;
+			}
+			.selectorFacturacion li {
+				float: left;
+				width: 25%;
+				height: 45px;
+				background: #E8EBEF;
+				border-right: 1px solid #D0D8E1;
+				border-top: 1px solid #D0D8E1;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				color: gray;
+				font-family: sans-serif;
+				font-size: 9px;
+				text-transform: uppercase;
+				text-align: center;
+				padding-top: 6px;
+				font-weight: bold;
+				position: relative;
+			}
+			.selectorFacturacion li:last {
+				border-right:0;
+			}
+			.selectorFacturacion li.activo::after {
+				content: '';
+				color: #003A7A;
+				background: #003A7A;
+				height: 5px;
+				display: block;
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+			}
+			.vistaFacturacion {
+				background:rgb(255, 254, 154);
+				padding:100px;
+			}
+			</style>
+			<div class="selectorFacturacion" ng-init="facturacion=1">
+				<ul>
+					<li ng-click="facturacion=1" ng-class="facturacion==1 ? 'activo':''">No facturado pesos</li>
+					<li ng-click="facturacion=2" ng-class="facturacion==2 ? 'activo':''">Facturado pesos</li>
+					<li ng-click="facturacion=3" ng-class="facturacion==3 ? 'activo':''">No facturado dólares</li>
+					<li ng-click="facturacion=4" ng-class="facturacion==4 ? 'activo':''">Facturado dólares</li>
+				</ul>
+			</div>
+			<div class="vistaFacturacion" ng-show="facturacion==1">
+				Placeholder de no facturado pesos
+			</div>
+			<div class="vistaFacturacion" ng-show="facturacion==2">
+				Placeholder de facturado pesos
+			</div>
+			<div class="vistaFacturacion" ng-show="facturacion==3">
+				Placeholder de no facturado dólares
+			</div>
+			<div class="vistaFacturacion" ng-show="facturacion==4">
+				Placeholder de facturado dólares
+			</div>
+
+	</section>
+	<section class="box-content-wrapp" ng-show="ad.texto">
+		<a href="{{ad.url}}" class="ads orange-bg" title="Ir al enlace">
+			<p class="small-text">{{ad.texto}}</p>
+			<i class="icon big-next"></i>
+		</a>
+	</section>
+	<hr class="fixed-border"></hr>
 </main>

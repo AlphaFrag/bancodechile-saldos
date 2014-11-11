@@ -117,7 +117,7 @@ app.directive('onLastRepeatSlider', function() {
 
   	//Función que obtiene la información del usuario a partir de una URL, retorna JSON con los valores
   	this.saldosGetUser = function(){
-  		$http.get('model/user.json').
+  		$http.get('model/user.json?r='+Math.random()).
 	    success(function(data, status, headers, config) {	
 	      $scope.userData = data;
 
