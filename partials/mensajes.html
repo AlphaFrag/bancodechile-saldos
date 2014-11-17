@@ -1,0 +1,27 @@
+<div ng-include="'partials/header.html'"></div>
+<main>
+    <div class="txt-header">
+        <p class="centered uppercase-text">Tienes {{mensajesPendientes}} nuevos avisos</p>
+    </div>
+
+    <section class="white-bg" >
+        <div ng-repeat="mensaje in userData.mensajes | orderBy:['-timestamp']" ng-init="mensaje.viewStatus = 'collapsed'" class="expandable-box-holder bbottom" ng-class="{ deployed : mensaje.viewStatus === 'expanded' }">
+            <div class="expandable-box-control type-message" ng-class="{ old : mensaje.visto, new : !mensaje.visto }" ng-click="mensaje.viewStatus = main.expandableBoxControl( mensaje.viewStatus )">
+                <div class="control-img">
+                    <img src="img/iconos/mensaje-{{ mensaje.tipo }}.svg" class="elastic-image">
+                </div>
+                <div class="control-label">
+                    <p>{{ mensaje.fecha }}</p>
+                    <p><strong>{{ mensaje.titulo }}</strong></p>
+                </div>
+                <div class="control-arrow">
+                    <span class="icon arrow-icon down"></span>
+                </div>
+            </div>
+            <div class="expandable-box-content">
+                <div class="expandable-box-inner-content no-border" ng-bind-html="mensaje.contenido | sanitizeHTML" ></div>
+            </div>
+        </div>
+    </section>
+</main>
+<hr class="fixed-border"></hr>

@@ -1,7 +1,7 @@
 <!-- header utilizado en los interiores con botón "volver" y título personalizable -->
 <header>
 	<button class="btn transparent menu-left-position" ng-click="main.goBack()"><i class="icon back-icon"></i>volver</button>
-	<h1 class="centered">{{currentProduct.titulo || '(sin título)'}}</h1>
+	<h1 class="centered">{{ tituloVista || currentProduct.titulo || '(sin título)' }}</h1>
 	<button class="menu-button" ng-click="main.deployMenu()"><i class="icon menu"></i>Menú</button>
 	<div class="menu-right-position light-gray-bg">
 	<div class="main-navigation dark-gray-bg">
@@ -20,10 +20,10 @@
 	</div>
 	<nav class="second-navigation">
 	  <a href="/inicio" title="Ir al inicio">Saldos</a>
-	  <a href="/mensajes" title="Ir al inicio">Mensajes ({{mensajesPendientes}})</a>
+	  <a href="/mensajes" ng-click="main.goTo('mensajes', 'Mensajes')" title="Ir a mensajes">Mensajes ({{mensajesPendientes}})</a>
 	</nav>
 	<div class="box-content-wrapp in-bottom-position">
-	  <a href="#" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
+	  <a href="/mis-aplicaciones" ng-click="main.goTo('mis-aplicaciones', 'Mis Aplicaciones')" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
 	</div>
 	</div>
 </header>

@@ -1,0 +1,153 @@
+<div ng-include="'partials/header.html'"></div>
+<main>
+
+    <section class="white-bg bbottom section-padded">
+        <p>
+            Teléfono de contacto <br>
+            <strong>{{ userData.telefono }}</strong>
+        </p>
+        <p>
+            Email de contacto <br>
+            <strong>{{ userData.email }}</strong>
+        </p>
+        <p>
+            Si los datos de contactono corresponden, por favor indique en el mensaje aqué teléfono o casilla de e-mail desea que le respondan
+        </p>
+    </section>
+
+    <section class="lighter-gray-bg bbottom section-padded">
+        <div class="white-bg">
+            <form class="form-spec" name="reviewForm" ng-submit="" novalidate>
+                <label for="tipo-de-consulta">
+                    <p class="label">Tipo de consulta</p>
+                    <select name="tipo-de-consulta" id="tipo-de-consulta" class="block-select">
+                        <option value="">Tipo de consulta</option>
+                        <option value="">Otro tipo</option>
+                        <option value="">Un tipo mas</option>
+                    </select>
+                </label>
+                <label for="cuerpo-mensaje">
+                    <p class="label all-padded">Mensaje</p>
+                    <textarea name="cuerpo-mensaje" id="cuerpo-mensaje" class="block-textarea" placeholder="Escriba el mensaje que desea enviar"></textarea>
+                </label>
+
+                <div class="wrapping">
+                    <input class="btn green-btn" type="submit" value="Enviar"/>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <h2 class="block-title">Twitter</h2>
+    <section class="white-bg bbottom section-padded">
+        <a href="/enviar-twitter" ng-click="main.goTo('enviar-twitter', 'Contacto twitter')" title="Ver perfil de @ayudabancochile" class="btn ghost-grey">
+            <span class="icon-text twitter bold-text">@ayudabancochile</span>
+        </a>
+        <p>
+            Debe tener registrada su cuenta de twitter en la 
+            <a href="#" title="configuración de su perfil">configuración de su perfil</a>
+        </p>
+    </section>
+
+    <h2 class="block-title">Banca telefónica</h2>
+    <div class="white-bg bbottom section-padded">
+        <a href="tel:+56226373737" title="Fonobank" class="btn complex-btn ghost-grey">
+            <span class="icon-text phone fleft">Fonobank</span>
+            <span class="bold-text righted-text fright">+562 26373737</span>
+        </a>
+    </div>
+
+    <div class="white-bg bbottom section-padded" ng-init="help_sec_1 = 'collapsed'">
+        <div class="expandable-box-holder" ng-class="{ deployed : help_sec_1 === 'expanded' }" >
+            <div class="expandable-box-control label-color minified" ng-click="help_sec_1 = main.expandableBoxControl( help_sec_1 )">
+                <strong class="icon-text right-icon absolute-icon" ng-class="{ 'plus-icon-circle' : help_sec_1 == 'collapsed', 'minus-icon-circle' : help_sec_1 == 'expanded' }">Emergencias bancarias en Chile</strong>
+            </div>
+            <div class="expandable-box-content">
+                <a href="tel:+56226373737" title="Fonobank" class="btn complex-btn ghost-grey">
+                    <span class="icon-text phone fleft">Fonobank</span>
+                    <span class="bold-text righted-text fright">+562 26373737</span>
+                </a>
+
+                <ul>
+                    <li>
+                        <strong>Orden de No Pago</strong>
+                    </li>
+                    <li>
+                        <strong>Bloques de Dispositivos a Plazo:</strong> Si el Depósito es normativo, llama a Fono bank o visita una captadora de cualquier sucursal del Banco. Si el Depósito es endosable, debes visitar una Captadora de cualquier sucursal del Banco, da aviso del extravío y solicita su bloqueo.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bg bbottom section-padded" ng-init="help_sec_2 = 'collapsed'">
+        <div class="expandable-box-holder" ng-class="{ deployed : help_sec_2 === 'expanded' }" >
+            <div class="expandable-box-control label-color minified" ng-click="help_sec_2 = main.expandableBoxControl( help_sec_2 )">
+                <strong class="icon-text right-icon absolute-icon" ng-class="{ 'plus-icon-circle' : help_sec_2 == 'collapsed', 'minus-icon-circle' : help_sec_2 == 'expanded' }">Emergencias bancarias fuera de Chile</strong>
+            </div>
+            <div class="expandable-box-content">
+                <p>
+                    <strong>Tarjetas Visa</strong><br>
+                    USA o Canadá: 1-800-396-9665
+                    Otro País: 1-303-067-1098*
+                </p>
+                <p>
+                    * Para mayor información, utilice el buscador de números en visa.cl. Si no encuentra el país o si tiene dificultades para comunicarse, llame con cobro revertido al +1-303-067-1098
+                </p>
+
+                <p>
+                    <strong>Tarjetas Mastercard</strong><br>
+                    USA o Canadá: 1-800-396-9665
+                    Otro País: 1-303-067-1098*
+                </p>
+                <p>
+                    * Para mayor información, utilice el buscador de números en <strong>Mastercard Global Services.</strong> En caso que el país no figure en el buscador, puede llamar por cobrar desde los Estados Unidos al número <strong>+1-636-722-7111</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bg bbottom section-padded" ng-init="help_sec_3 = 'collapsed'">
+        <div class="expandable-box-holder" ng-class="{ deployed : help_sec_3 === 'expanded' }" >
+            <div class="expandable-box-control label-color minified" ng-click="help_sec_3 = main.expandableBoxControl( help_sec_3 )">
+                <strong class="icon-text right-icon absolute-icon" ng-class="{ 'plus-icon-circle' : help_sec_3 == 'collapsed', 'minus-icon-circle' : help_sec_3 == 'expanded' }">Solicitud de productos Banca Personas</strong>
+            </div>
+            <div class="expandable-box-content">
+                <a href="tel:+56226373737" title="Fonobank" class="btn complex-btn ghost-grey">
+                    <span class="icon-text phone fleft">Fonobank</span>
+                    <span class="bold-text righted-text fright">+562 26373737</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bg bbottom section-padded" ng-init="help_sec_4 = 'collapsed'">
+        <div class="expandable-box-holder" ng-class="{ deployed : help_sec_4 === 'expanded' }" >
+            <div class="expandable-box-control label-color minified" ng-click="help_sec_4 = main.expandableBoxControl( help_sec_4 )">
+                <strong class="icon-text right-icon absolute-icon" ng-class="{ 'plus-icon-circle' : help_sec_4 == 'collapsed', 'minus-icon-circle' : help_sec_4 == 'expanded' }">Banchile Seguros</strong>
+            </div>
+            <div class="expandable-box-content">
+                <a href="tel:+56226373737" title="Fonobank" class="btn complex-btn ghost-grey">
+                    <span class="icon-text phone fleft">Fonobank</span>
+                    <span class="bold-text righted-text fright">+562 26373737</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bg bbottom section-padded" ng-init="help_sec_5 = 'collapsed'">
+        <div class="expandable-box-holder" ng-class="{ deployed : help_sec_5 === 'expanded' }" >
+            <div class="expandable-box-control label-color minified" ng-click="help_sec_5 = main.expandableBoxControl( help_sec_5 )">
+                <strong class="icon-text right-icon absolute-icon" ng-class="{ 'plus-icon-circle' : help_sec_5 == 'collapsed', 'minus-icon-circle' : help_sec_5 == 'expanded' }">Mesa Central</strong>
+            </div>
+            <div class="expandable-box-content">
+                <a href="tel:+56226373737" title="Fonobank" class="btn complex-btn ghost-grey">
+                    <span class="icon-text phone fleft">Fonobank</span>
+                    <span class="bold-text righted-text fright">+562 26373737</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</main>
+<hr class="fixed-border"></hr>

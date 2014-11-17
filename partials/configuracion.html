@@ -1,16 +1,179 @@
 <div ng-include="'partials/header.html'"></div>
 <main>
-	<section class="white-bg">
+    <section class="white-bg bbottom">
+        <div class="profile-info-holder">
+            <img src="{{userData.avatar}}" class="profile-pic">
+            <p class="profile-name">{{userData.nombre}}</p>
+            <p class="profile-meta">{{userData.rut}}</p>
+            <p class="profile-meta">{{userData.email}}</p>
+        </div>
+    </section>
+    
+    <!-- por el momento esto lo deje estatico pero debiera venir del json del usuario -->
+    <h2 class="block-title">Cuentas bancarias</h2>
+    <section class="white-bg" ng-init="mipago = 'expanded'">
+        <div class="expandable-box-holder bbottom" ng-class="{ deployed : mipago === 'collapsed' }" >
+            <div class="expandable-box-control" ng-click="mipago = main.expandableBoxControl( mipago )">
+                <div class="control-img">
+                    <img src="img/logos/app/mi-pago-small.png" class="elastic-wrapp-img">
+                </div>
+                <div class="control-label">
+                    <p><strong>Mi Pago</strong></p>
+                    <p>Cta. Corriente xx-xxx-xx371-02</p>
+                </div>
+                <div class="control-arrow">
+                    <span class="icon arrow-icon down"></span>
+                </div>
+            </div>
+            <div class="expandable-box-content lighter-gray-bg">
+                <div class="expandable-box-inner-content"  ng-init="mipago_ctacorriente = 'collapsed'">
+                    <div class="regular-padded bbottom">
+                        <p>
+                            Seleccione una cuenta para utilizar <br>
+                            <strong>Mi Pago</strong>
+                        </p>
 
-		<style type="text/css">
-		.phConfig {
-			background:rgb(255, 254, 154);
-			padding:100px;
-			text-align: center;
-		}
-		</style>
-		<div class="phConfig">
-			Config..
-		</div>
-	</section>
+                        <button class="profile-account-btn" ng-click="mipago_ctacorriente = main.expandableBoxControl( mipago_ctacorriente )">
+                            Cta. Corriente xx-xxx-xx371-02
+                        </button>
+                    </div>
+                    <div class="regular-expandable regular-padded" ng-class="{ deployed : mipago_ctacorriente === 'expanded' }">
+                        <p>
+                            <strong class="block-element">Utilizado Hoy</strong>
+                            <span class="block-element">$100.000</span>
+                        </p>
+                        <p>
+                            <strong class="block-element">Monto máximo diario (hasta $500.000)</strong>
+                            <span class="block-element bold-text green-text">$500.000</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expandable-box-holder bbottom" ng-class="{ deployed : mitrans === 'collapsed' }" >
+            <div class="expandable-box-control" ng-click="mitrans = main.expandableBoxControl( mitrans )">
+                <div class="control-img">
+                    <img src="img/logos/app/mi-trans-small.png" class="elastic-wrapp-img">
+                </div>
+                <div class="control-label">
+                    <p><strong>Mi Trans</strong></p>
+                    <p>Cta. Corriente xx-xxx-xx371-02</p>
+                </div>
+                <div class="control-arrow">
+                    <span class="icon arrow-icon down"></span>
+                </div>
+            </div>
+            <div class="expandable-box-content lighter-gray-bg">
+                <div class="expandable-box-inner-content"  ng-init="mitrans_ctacorriente = 'collapsed'">
+                    <div class="regular-padded bbottom">
+                        <p>
+                            Seleccione una cuenta para utilizar <br>
+                            <strong>Mi Pago</strong>
+                        </p>
+
+                        <button class="profile-account-btn" ng-click="mitrans_ctacorriente = main.expandableBoxControl( mitrans_ctacorriente )">
+                            Cta. Corriente xx-xxx-xx371-02
+                        </button>
+                    </div>
+                    <div class="regular-expandable regular-padded" ng-class="{ deployed : mitrans_ctacorriente === 'expanded' }">
+                        <p>
+                            <strong class="block-element">Utilizado Hoy</strong>
+                            <span class="block-element">$100.000</span>
+                        </p>
+                        <p>
+                            <strong class="block-element">Monto máximo diario (hasta $500.000)</strong>
+                            <span class="block-element bold-text green-text">$500.000</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expandable-box-holder bbottom" ng-class="{ deployed : misaldo === 'collapsed' }" >
+            <div class="expandable-box-control" ng-click="misaldo = main.expandableBoxControl( misaldo )">
+                <div class="control-img">
+                    <img src="img/logos/app/mi-saldo-small.png" class="elastic-wrapp-img">
+                </div>
+                <div class="control-label">
+                    <p><strong>Mi Saldo</strong></p>
+                    <p>Cta. Corriente xx-xxx-xx371-02</p>
+                </div>
+                <div class="control-arrow">
+                    <span class="icon arrow-icon down"></span>
+                </div>
+            </div>
+            <div class="expandable-box-content lighter-gray-bg">
+                <div class="expandable-box-inner-content"  ng-init="misaldo_ctacorriente = 'collapsed'">
+                    <div class="regular-padded bbottom">
+                        <p>
+                            Seleccione una cuenta para visualizar su saldo en el home
+                        </p>
+
+                        <button class="profile-account-btn" ng-click="misaldo_ctacorriente = main.expandableBoxControl( misaldo_ctacorriente )">
+                            Cta. Corriente xx-xxx-xx371-02
+                        </button>
+                    </div>
+                    <div class="regular-expandable regular-padded" ng-class="{ deployed : misaldo_ctacorriente === 'expanded' }">
+                        <p>
+                            <strong class="block-element">Utilizado Hoy</strong>
+                            <span class="block-element">$100.000</span>
+                        </p>
+                        <p>
+                            <strong class="block-element">Monto máximo diario (hasta $500.000)</strong>
+                            <span class="block-element bold-text green-text">$500.000</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="block-title">Redes sociales</h2>
+    <section class="white-bg">
+        <p class="regular-padded plain-p bbottom">Vincula tus redes sociales para buscar contactos en la red</p>
+        <label for="profile-twitter" class="block-label">
+            <span class="icon-text twitter block-label-text">Twitter</span>
+            <input 
+                id="profile-twitter" 
+                name="profile-twitter" 
+                type="checkbox"
+                class="block-label-input pretty-checkbox"
+                ng-model="userData.redesSociales.twitter"
+            >
+        </label>
+        <label for="profile-facebook" class="block-label">
+            <span class="icon-text facebook block-label-text">Facebook</span>
+            <input 
+                id="profile-facebook" 
+                name="profile-facebook" 
+                type="checkbox"
+                class="block-label-input pretty-checkbox"
+                ng-model="userData.redesSociales.facebook"
+            >
+        </label>
+    </section>
+
+    <h2 class="block-title">Claves de seguridad</h2>
+    <section class="white-bg">
+        <a href="#" class="block-link arrow-link" title="Modificar PIN" ng-click="main.goTo('cambiar-clave-seguridad', 'Clave de Seguridad')">
+            Modifica tu clave pin, con la que puedes ingresar a todas las aplicaciones
+        </a>
+    </section>
+
+    <h2 class="block-title">Privacidad</h2>
+    <section class="white-bg">
+        <label for="profile-private-data" class="block-label">
+            <span class="block-label-text">
+                Mis datos son privados y sólo mis contactos pueden enviarme cobros.
+            </span>
+            <input 
+                id="profile-private-data" 
+                name="profile-private-data" 
+                type="checkbox"
+                class="block-label-input pretty-checkbox mar-top"
+                ng-model="userData.datosPrivados"
+            >
+        </label>
+    </section>
+
+    <hr class="fixed-border"></hr>
 </main>

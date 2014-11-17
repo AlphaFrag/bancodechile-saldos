@@ -45,23 +45,55 @@
 	<section class="white-bg">
 		<div class="selectorFacturacion" ng-init="fact=1">
 			<ul>
-				<li ng-click="fact=1" ng-class={activo:fact==1}>No facturado pesos</li>
-				<li ng-click="fact=2" ng-class={activo:fact==2}>Facturado pesos</li>
-				<li ng-click="fact=3" ng-class={activo:fact==3}>No facturado dólares</li>
-				<li ng-click="fact=4" ng-class={activo:fact==4}>Facturado dólares</li>
+				<li ng-click="fact=1" ng-class="{activo:fact==1}">No facturado pesos</li>
+				<li ng-click="fact=2" ng-class="{activo:fact==2}">Facturado pesos</li>
+				<li ng-click="fact=3" ng-class="{activo:fact==3}">No facturado dólares</li>
+				<li ng-click="fact=4" ng-class="{activo:fact==4}">Facturado dólares</li>
 			</ul>
 		</div>
 		<div class="vistaFacturacion" ng-show="fact==1">
-			Placeholder de no facturado pesos
+			<div class="table-like bbottom" ng-repeat="movimiento in currentProduct.ultimosMovimientos.noFacturadoPesos">
+				<div class="column-like lefted">
+					<p>{{ movimiento.fecha }}</p>
+					<p><strong>{{ movimiento.titulo }}</strong></p>
+				</div>
+				<div class="column-like righted">
+					<strong class="blue-color">{{ movimiento.monto }}</strong>
+				</div>
+			</div>
 		</div>
 		<div class="vistaFacturacion" ng-show="fact==2">
-			Placeholder de facturado pesos
+			<div class="table-like bbottom" ng-repeat="movimiento in currentProduct.ultimosMovimientos.facturadoPesos">
+				<div class="column-like lefted">
+					<p>{{ movimiento.fecha }}</p>
+					<p><strong>{{ movimiento.titulo }}</strong></p>
+				</div>
+				<div class="column-like righted">
+					<strong class="blue-color">{{ movimiento.monto }}</strong>
+				</div>
+			</div>
 		</div>
 		<div class="vistaFacturacion" ng-show="fact==3">
-			Placeholder de no facturado dólares
+			<div class="table-like bbottom" ng-repeat="movimiento in currentProduct.ultimosMovimientos.noFacturadoDolares">
+				<div class="column-like lefted">
+					<p>{{ movimiento.fecha }}</p>
+					<p><strong>{{ movimiento.titulo }}</strong></p>
+				</div>
+				<div class="column-like righted">
+					<strong class="blue-color">{{ movimiento.monto }}</strong>
+				</div>
+			</div>
 		</div>
 		<div class="vistaFacturacion" ng-show="fact==4">
-			Placeholder de facturado dólares
+			<div class="table-like bbottom" ng-repeat="movimiento in currentProduct.ultimosMovimientos.facturadoDolares">
+				<div class="column-like lefted">
+					<p>{{ movimiento.fecha }}</p>
+					<p><strong>{{ movimiento.titulo }}</strong></p>
+				</div>
+				<div class="column-like righted">
+					<strong class="blue-color">{{ movimiento.monto }}</strong>
+				</div>
+			</div>
 		</div>
 
 	</section>
@@ -72,4 +104,4 @@
 		</a>
 	</section>
 	<hr class="fixed-border"></hr>
-</main>
+</main> 

@@ -1,16 +1,24 @@
 {
   "nombre" : "Jorge Codina",
-  "rut" : "16301806 - 3",
+  "rut" : "16301806-3",
   "avatar" : "img/examples/avatar.svg",
+  "email" : "jorge.codina@ida.cl",
   "social" : false,
+  "telefono" : "+56 9 6234 5678",
   "ads" : {
     "url": "http://www.example.com",
     "texto": "¿Deseas hacer una transferencia? ingresa a Transferencias del BCH"
   },
+  "datosPrivados" : true,
+  "redesSociales" : {
+    "twitter" : true,
+    "facebook" : false  
+  },
+  "clave" : "abcdefghi",
   "productos" : [{
                   "nombre" : "Tarjeta de crédito VISA",
                   "nombreCorto": "T.Crédito VISA",
-                  "numero" : "00-111-111111111111",
+                  "numero" : "...1111",
                   "numeroDesplegable" : "...1111",
                   "numeroCorto" : "...1111",
                   "disponible" : 200000 ,
@@ -33,6 +41,116 @@
                                       "autorizado" : 1000000,
                                       "utilizado" : 0
                                    },
+                  "ultimosMovimientos" : {
+                    "noFacturadoPesos" : [
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $8.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $80.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Pago Sushi",
+                        "monto" : "- $12.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $5.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $98.000"
+                      }
+                    ],
+                    "facturadoPesos" : [
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $8.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $80.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Pago Sushi",
+                        "monto" : "- $12.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $5.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $98.000"
+                      }
+                    ],
+                    "noFacturadoDolares" : [
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $8.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $80.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Pago Sushi",
+                        "monto" : "- $12.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $5.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $98.000"
+                      }
+                    ],
+                    "facturadoDolares" : [
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $8.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $80.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Pago Sushi",
+                        "monto" : "- $12.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $5.000"
+                      },
+                      {
+                        "fecha" : "30 / 07 / 2014",
+                        "titulo" : "Compra en comercio",
+                        "monto" : "- $98.000"
+                      }
+                    ]
+                  },
                   "charts" : {
                         "fechaActualizada" : "17 / 07 / 2014",
                         "color" : "#003579",
@@ -161,30 +279,35 @@
   "mensajes" : [{
                  "tipo" : "beneficio",
                  "fecha" : "30 / 07 / 2014",
+                 "timestamp" : 56781999,
                  "visto" : false,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
                  "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
+                 "timestamp" : 56781998,
                  "visto" : false,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
                  "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
+                 "timestamp" : 56781997,
                  "visto" : true,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
                  "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
+                 "timestamp" : 56781996,
                  "visto" : true,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
                  "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
+                 "timestamp" : 56781995,
                  "visto" : true,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
                  "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"

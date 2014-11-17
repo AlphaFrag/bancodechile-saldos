@@ -1,0 +1,22 @@
+<div ng-include="'partials/header.html'"></div>
+<main>
+    <section class="wrapp" ng-controller="generalFormController as formCtrl">
+        <form name="sendTweetForm" class="form-spec" ng-submit="formCtrl.sendTweetMessage()" novalidate>
+            <label for="tweet-body" ng-init="tweetbodymessage = '@ayudabancochile '">
+                <p class="label">@marianagutierrez</p>
+                <textarea  ng-model="tweetbodymessage" rows="4" maxlength="140" name="tweetbody" id="tweet-body" class="block-textarea" placeholder="Escriba el mensaje que desea enviar">{{ tweetbodymessage }}</textarea>
+            </label>
+            <div class="wrapping">
+                <p class="green-text smaller-paragraph">
+                    {{ 140 - tweetbodymessage.length }} caracteres restantes
+                </p>
+                <p>
+                    Envíe un tweet a <strong>@ayudabancochile</strong> con el hashtag <strong>#AppBancoChile</strong> y nos comunicaremos con usted a la brevedad
+                </p>
+                <input class="btn green-btn" type="submit" value="Enviar Tweet"/>
+            </div>
+        </form>
+    </section>
+</main>
+
+<hr class="fixed-border"></hr>

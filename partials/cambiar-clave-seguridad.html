@@ -1,0 +1,34 @@
+<div ng-include="'partials/header.html'"></div>
+<main>
+    <div class="txt-header">
+        <p class="centered uppercase-text">Cambiar la clave de seguridad</p>
+    </div>
+    <div class="wrapping" ng-controller="generalFormController as formCtrl">
+        <form name="changePassForm" class="form-spec" ng-submit="formCtrl.sendChangePassForm()" novalidate>
+            <label for="claveActual">
+                <p class="label">Ingresar clave actual</p>
+                <input id="claveActual" type="password" name="claveActual" ng-model="claveActual" ng-class="{'invalid-input': isValidPass === false}" placeholder="*****" required />
+
+                <span class="error-message" ng-show ="isValidPass === false">La clave es incorrecta</span>
+            </label>
+
+            <label for="claveNueva">
+                <p class="label">Clave internet</p>
+                <input id="claveNueva" type="password" name="claveNueva" ng-model="claveNueva" ng-class="{'invalid-input': claveNueva !== claveNuevaClone }" placeholder="*****" required />
+                <span class="error-message" ng-show ="claveNueva !== claveNuevaClone">Las claves no coinciden</span>
+            </label>
+
+            <label for="claveNuevaClone">
+                <p class="label">Clave internet</p>
+                <input id="claveNuevaClone" type="password" name="claveNuevaClone" ng-model="claveNuevaClone" ng-class="{'invalid-input': claveNueva !== claveNuevaClone}" placeholder="****" required />
+                <span class="error-message" ng-show ="claveNueva !== claveNuevaClone">Las claves no coinciden</span>
+            </label>
+
+            <div class="wrapping">
+                <input class="btn green-btn" type="submit" value="Continuar"/>
+            </div>
+        </form>
+    </div>
+</main>
+
+<hr class="fixed-border"></hr>

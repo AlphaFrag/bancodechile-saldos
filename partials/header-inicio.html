@@ -19,10 +19,10 @@
 		</div>
 		<nav class="second-navigation">
 			<a href="/inicio" title="Ir al inicio">Saldos</a>
-			<a href="/mensajes" title="Ir al inicio">Mensajes ({{mensajesPendientes}})</a>
+			<a href="/mensajes" ng-click="main.goTo('mensajes', 'Mensajes')" title="Ir a mensajes">Mensajes ({{mensajesPendientes}})</a>
 		</nav>
 		<div class="box-content-wrapp in-bottom-position">
-			<a href="#" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
+			<a href="/mis-aplicaciones" title="Mis aplicaciones" ng-click="main.goTo('mis-aplicaciones', 'Mis Aplicaciones')" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
 		</div>
 	</div>
 </header>
