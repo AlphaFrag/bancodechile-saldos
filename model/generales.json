@@ -1,13 +1,13 @@
 {
   "banco": {
-    "name": "Banco de Chile",
-    "slug": "banco-de-chile",
-    "logo": "img/logos/bancos/logo-banco-de-chile.svg"
+    "name": "Credichile",
+    "slug": "credichile",
+    "logo": "img/logos/bancos/logo-credichile.svg"
   },
   "aplicacion": {
     "name" : "Saldos",
     "slug" : "saldos",
-    "logo" : "img/logos/app/saldo-bch.png",
+    "logo" : "img/logos/app/saldo-credichile.png",
     "logoMin" : "img/logos/app/saldo-min.png"
   }
 }

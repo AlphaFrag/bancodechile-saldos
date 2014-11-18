@@ -3,20 +3,63 @@
     //////////////////////////////////////////////////////////////////GLOBALES
     var currentProduct = {};
     var currentDocument = {};
+    var currentBankSlug = '#003579';
+
+    /// setea los nombres de las vistas
+    var getViewTitle = function( path ){
+        var path_slug = path.replace("/", '');
+        switch( path_slug ){
+            case 'inicio': return 'Inicio';
+            case 'olvido': return 'Recuperar Clave';
+            case 'corriente': return 'Saldo Cuenta Corriente';
+            case 'tarjeta': return 'Saldo Tarjeta de Crédito';
+            case 'document': return 'Documento';
+            case 'config': return 'Configuración';
+            case 'cambiar-clave-seguridad': return 'Cambiar Clave';
+            case 'mensajes': return 'Mensajes';
+            case 'mis-aplicaciones': return 'Mis Aplicaciones';
+            case 'ayuda': return 'Ayuda';
+            case 'enviar-twitter': return 'Enviar Tweet';
+            default: return 'Sin Título';
+        }
+    };
 
     //Setea el slider
     var setSlider = function(slider) {
-            new window.NinjaSlider(slider, {
-                auto: 3000,
-                transitionCallback: function(index, slide, container) {
-                    var $slider = angular.element(container),
-                        $bullets = $slider.find('.slide-control'),
-                        $numbers = $slider.prev().find('.change-number');
-                    $bullets.removeClass('active').filter('[data-slide="' + index + '"]').addClass('active');
-                    $numbers.text(index + 1);
-                }
-            });
-        }
+        new window.NinjaSlider(slider, {
+            auto: 3000,
+            transitionCallback: function(index, slide, container) {
+                var $slider = angular.element(container),
+                    $bullets = $slider.find('.slide-control'),
+                    $numbers = $slider.prev().find('.change-number');
+                $bullets.removeClass('active').filter('[data-slide="' + index + '"]').addClass('active');
+                $numbers.text(index + 1);
+            }
+        });
+    };
+
+    // setea la existencia de sidebar en funcion de la ruta
+    var hasSubMenu = function( path ){
+        var path_slug = path.replace("/", '');
+            switch( path_slug ){
+                case 'inicio':
+                case 'olvido':
+                case 'corriente':
+                case 'tarjeta':
+                case 'document':
+                case 'config':
+                case 'cambiar-clave-seguridad':
+                case 'mensajes':
+                case 'mis-aplicaciones':
+                case 'ayuda':
+                case 'enviar-twitter':
+                    return true;
+                break;
+                default: 
+                    return false;
+                break;
+            }
+    }
 
     //Formatea los números en pesos
     var setPesos = function(number, decimals, dec_point, thousands_sep) {
@@ -81,20 +124,52 @@
 
     //////////////////////////////////////////////////////////////////CONTROLADORES
     //Carga información del Banco y de la App
-    app.controller("saldosGetData", function($scope, $http) {
+    app.controller("saldosGetData", function($scope, $location, $http) {
+        $scope.hasSubmenu = hasSubMenu( $location.path() );
+        $scope.innerView = ! ($location.path() === '/inicio');
+
+        $scope.$on('$routeChangeSuccess', function(){
+            angular.element('#main-holder').removeClass('deployed-menu');
+            angular.element('#side-menu').removeClass('deployed-menu');
+            angular.element('#side-menu-button').removeClass('deployed-menu');
+            
+            $scope.hasSubmenu = hasSubMenu( $location.path() );
+            $scope.innerView = ! ($location.path() === '/inicio');
+        });
+
+
         $http.get('model/generales.json').
         success(function(data, status, headers, config) {
             $scope.banco = data.banco;
             $scope.aplicacion = data.aplicacion;
+
+            switch( data.banco.slug ){
+                case 'banco-de-chile':
+                    currentBankSlug = '#003579';
+                break;
+                case 'banco-edwards':
+                    currentBankSlug = '#00583b';
+                break;
+                case 'credichile':
+                    currentBankSlug = '#1a6cb5';
+                break;
+                default :
+                    currentBankSlug = '#003579';
+                break
+            }
         }).
         error(function(data, status, headers, config) {});
     });
 
     //Controlador para aplicación Saldos en general
     app.controller("mainController", function($scope, $location, $http, productService) {
+        
         $scope.isDeployedMenu = false; //Inicializa variable para setear el menú desplegado por defecto
         $scope.currentProduct = currentProduct;
         $scope.currentDocument = currentDocument;
+
+        $scope.viewTitle = getViewTitle( $location.$$path );
+
         var self = this;
         //Función que obtiene la información del usuario a partir de una URL, retorna JSON con los valores
         this.saldosGetUser = function() {
@@ -130,10 +205,10 @@
             }, {
                 "name": currentProduct.charts.series[1].ano,
                 "data": currentProduct.charts.series[1].data,
-                "color": '#003579',
+                "color": currentBankSlug,
                 "dataLabels": {
                     "enabled": true,
-                    "color": '#003579',
+                    "color": currentBankSlug,
                     "align": 'center',
                     "style": {
                         "font-weight": 'bold',
@@ -152,7 +227,8 @@
                     "symbol": 'circle'
                 }
             }];
-            $scope.chartDates = ['17 Mayo', '17 Junio', '17 Julio'];
+            $scope.chartDates = currentProduct.charts.fechas;
+
             $scope.chartConfig = {
                 options: {
                     chart: {
@@ -163,6 +239,9 @@
                         series: {
                             fillOpacity: 0.1
                         }
+                    },
+                    legend: {
+                        enabled: false
                     }
                 },
                 title: {
@@ -182,7 +261,7 @@
                 credits: {
                     enabled: false
                 },
-                series: $scope.chartSeries,
+                series: $scope.chartSeries
             }
         }
         this.setChartTarjeta = function() {
@@ -242,11 +321,16 @@
         }
         // this.setChartTarjeta();
         ////////////////////////DELEGACIONES
+
         //Despliega el menú principal
         this.deployMenu = function() {
-                $scope.isDeployedMenu = $scope.isDeployedMenu == true ? false : true;
-            }
-            //Mueve el slider
+            angular.element('#main-holder').toggleClass('deployed-menu');
+            angular.element('#side-menu').toggleClass('deployed-menu');
+            angular.element('#side-menu-button').toggleClass('deployed-menu');
+            // $scope.isDeployedMenu = $scope.isDeployedMenu == true ? false : true;
+        }
+
+        //Mueve el slider
         this.moveSlideTo = function(targetSlidenum) {
             ninjaSliderObj = angular.element('.slider').get(0).ninjaSlider;
             ninjaSliderObj.slide(targetSlidenum);
@@ -398,6 +482,37 @@
                 }).error(function(data, status, headers, config) {});
             }
         }
-    });
 
+        this.sendTweetMessage = function(){
+            $scope.isSubmitted = true;
+            if ( $scope.sendTweetForm.$valid && $scope.tweetbodymessage.length > 18 ) {
+                $http.get('model/sendTweet.json').
+                success(function(data, status, headers, config) {
+                    $scope.response = data.respuesta;
+                    if ($scope.response == 1) {
+                        window.history.back();
+                    } else {
+                        $scope.sendError = true;
+                    }
+                }).error(function(data, status, headers, config) {});
+            }
+        }
+
+        this.sendReviewForm = function(){
+            $scope.isSubmitted = true;
+            $scope.succesfull = false;
+
+            if ( $scope.reviewForm.$valid ) {
+                $http.get('model/sendConsulta.json').
+                success(function(data, status, headers, config) {
+                    $scope.response = data.respuesta;
+                    if ($scope.response == 1) {
+                        $scope.succesfull = true;
+                    } else {
+                        $scope.sendError = true;
+                    }
+                }).error(function(data, status, headers, config) {});
+            }
+        }
+    });
 })();

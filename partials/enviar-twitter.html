@@ -4,7 +4,11 @@
         <form name="sendTweetForm" class="form-spec" ng-submit="formCtrl.sendTweetMessage()" novalidate>
             <label for="tweet-body" ng-init="tweetbodymessage = '@ayudabancochile '">
                 <p class="label">@marianagutierrez</p>
-                <textarea  ng-model="tweetbodymessage" rows="4" maxlength="140" name="tweetbody" id="tweet-body" class="block-textarea" placeholder="Escriba el mensaje que desea enviar">{{ tweetbodymessage }}</textarea>
+                <textarea  ng-model="tweetbodymessage" rows="4" maxlength="140" name="tweetbody" id="tweet-body" class="block-textarea" placeholder="Escriba el mensaje que desea enviar" required>{{ tweetbodymessage }}</textarea>
+
+                <span class="error-message" ng-show="isSubmitted && (!tweetbodymessage || tweetbodymessage.length < 18)">Debe ingresar un mensaje</span>
+                
+                <span class="error-message" ng-show="isSubmitted && sendError">Ocurrió un error enviando el mensaje</span>
             </label>
             <div class="wrapping">
                 <p class="green-text smaller-paragraph">

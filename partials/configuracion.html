@@ -26,18 +26,19 @@
                 </div>
             </div>
             <div class="expandable-box-content lighter-gray-bg">
-                <div class="expandable-box-inner-content"  ng-init="mipago_ctacorriente = 'collapsed'">
+                <div class="expandable-box-inner-content">
                     <div class="regular-padded bbottom">
                         <p>
                             Seleccione una cuenta para utilizar <br>
                             <strong>Mi Pago</strong>
                         </p>
-
-                        <button class="profile-account-btn" ng-click="mipago_ctacorriente = main.expandableBoxControl( mipago_ctacorriente )">
-                            Cta. Corriente xx-xxx-xx371-02
-                        </button>
+                        <select name="mipago_account" id="mipago_account" class="block-select wrapped">
+                            <option value="">Cta. Corriente xx-xxx-xx371-02</option>
+                            <option value="">Otro tipo</option>
+                            <option value="">Un tipo mas</option>
+                        </select>
                     </div>
-                    <div class="regular-expandable regular-padded" ng-class="{ deployed : mipago_ctacorriente === 'expanded' }">
+                    <div class="regular-padded smaller-text">
                         <p>
                             <strong class="block-element">Utilizado Hoy</strong>
                             <span class="block-element">$100.000</span>
@@ -64,18 +65,19 @@
                 </div>
             </div>
             <div class="expandable-box-content lighter-gray-bg">
-                <div class="expandable-box-inner-content"  ng-init="mitrans_ctacorriente = 'collapsed'">
+                <div class="expandable-box-inner-content">
                     <div class="regular-padded bbottom">
                         <p>
                             Seleccione una cuenta para utilizar <br>
                             <strong>Mi Pago</strong>
                         </p>
-
-                        <button class="profile-account-btn" ng-click="mitrans_ctacorriente = main.expandableBoxControl( mitrans_ctacorriente )">
-                            Cta. Corriente xx-xxx-xx371-02
-                        </button>
+                        <select name="mipago_account" id="mipago_account" class="block-select wrapped">
+                            <option value="">Cta. Corriente xx-xxx-xx371-02</option>
+                            <option value="">Otro tipo</option>
+                            <option value="">Un tipo mas</option>
+                        </select>
                     </div>
-                    <div class="regular-expandable regular-padded" ng-class="{ deployed : mitrans_ctacorriente === 'expanded' }">
+                    <div class="regular-padded smaller-text">
                         <p>
                             <strong class="block-element">Utilizado Hoy</strong>
                             <span class="block-element">$100.000</span>
@@ -102,17 +104,19 @@
                 </div>
             </div>
             <div class="expandable-box-content lighter-gray-bg">
-                <div class="expandable-box-inner-content"  ng-init="misaldo_ctacorriente = 'collapsed'">
+                <div class="expandable-box-inner-content">
                     <div class="regular-padded bbottom">
                         <p>
-                            Seleccione una cuenta para visualizar su saldo en el home
+                            Seleccione una cuenta para utilizar <br>
+                            <strong>Mi Pago</strong>
                         </p>
-
-                        <button class="profile-account-btn" ng-click="misaldo_ctacorriente = main.expandableBoxControl( misaldo_ctacorriente )">
-                            Cta. Corriente xx-xxx-xx371-02
-                        </button>
+                        <select name="mipago_account" id="mipago_account" class="block-select wrapped">
+                            <option value="">Cta. Corriente xx-xxx-xx371-02</option>
+                            <option value="">Otro tipo</option>
+                            <option value="">Un tipo mas</option>
+                        </select>
                     </div>
-                    <div class="regular-expandable regular-padded" ng-class="{ deployed : misaldo_ctacorriente === 'expanded' }">
+                    <div class="regular-padded smaller-text">
                         <p>
                             <strong class="block-element">Utilizado Hoy</strong>
                             <span class="block-element">$100.000</span>

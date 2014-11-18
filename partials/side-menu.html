@@ -1,9 +1,6 @@
-<!-- header utilizado en los interiores con botón "volver" y título personalizable -->
-<header>
-    <button class="btn transparent menu-left-position" ng-click="main.goBack()"><i class="icon back-icon"></i>volver</button>
-    <h1 class="centered">{{ viewTitle }}</h1>
-    <!-- <button class="menu-button" ng-click="main.deployMenu()"><i class="icon menu"></i>Menú</button>
-    <div class="menu-right-position light-gray-bg">
+<div id="side-menu-holder" ng-controller="mainController as main">
+    <button id="side-menu-button" class="menu-button" ng-click="main.deployMenu()"><i class="icon menu"></i>Menú</button>
+    <div id="side-menu" class="menu-right-position light-gray-bg">
         <div class="main-navigation dark-gray-bg">
             <div class="box-content-wrapp ohidden">
                 <img class="content-left" ng-src="{{userData.avatar}}" alt="avatar" />
@@ -24,5 +21,5 @@
         <div class="box-content-wrapp in-bottom-position">
             <a href="/mis-aplicaciones" ng-click="main.goTo('mis-aplicaciones', 'Mis Aplicaciones')" title="Mis aplicaciones" class="btn gray-btn"><i class="icon app"></i>Mis Aplicaciones</a>
         </div>
-    </div> -->
-</header>
+    </div>
+</div>

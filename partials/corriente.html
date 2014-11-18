@@ -2,11 +2,23 @@
 <main>
 	<h2 class="block-title">Balance de Saldo <span class="label-small-light">Al {{currentProduct.charts.fechaActualizada}}</span></h2>
 	<highchart class="chart bbottom" config="chartConfig" ></highchart>
+	
+	<div class="highchart-legends column-wrapper regular-padded">
+		<div class="column-half">
+			<div class="legend-border dotted column-half standard-grey-border-color"></div>
+			<p class="column-half standard-grey-color">Año {{ currentProduct.charts.series[0].ano }}</p>
+		</div>
+		<div class="column-half">
+			<div class="legend-border dotted column-half bank-bg"></div>
+			<p class="column-half bank-color bold-text bank-grey-border-color">Año {{ currentProduct.charts.series[1].ano }}</p>
+		</div>
+	</div>
+
 	<h2 class="block-title">Detalle de Saldo</h2>
 	<section class="white-bg">
 		<div class="gray-block">
-			<span class="content-left half label-data-title"><strong>{{currentProduct.nombre}}</strong></span>
-			<span class="content-right half label-data-title"><strong>{{currentProduct.numero}}</strong></span>
+			<span class="content-left half label-data-title"><strong>{{ currentProduct.nombre }}</strong></span>
+			<span class="content-right half label-data-title"><strong>{{ currentProduct.numero }}</strong></span>
 		</div>
 		<div class="wrapp btm bbottom">
 			<span class="content-left min-label-data-title">Disponible</span>

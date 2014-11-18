@@ -16,20 +16,27 @@
     </section>
 
     <section class="lighter-gray-bg bbottom section-padded">
-        <div class="white-bg">
-            <form class="form-spec" name="reviewForm" ng-submit="" novalidate>
+        <div class="white-bg" ng-controller="generalFormController as formCtrl">
+            <div class="regular-padded" ng-show="isSubmitted && succesfull">
+                <span class="green-text centered exito" >Se ha enviado el mensaje exitósamente</span>
+            </div>
+
+            <form class="form-spec" name="reviewForm" ng-submit="formCtrl.sendReviewForm()" novalidate>
                 <label for="tipo-de-consulta">
                     <p class="label">Tipo de consulta</p>
-                    <select name="tipo-de-consulta" id="tipo-de-consulta" class="block-select">
+                    <select name="tipo_consulta" ng-model="tipo_consulta" id="tipo-de-consulta" class="block-select">
                         <option value="">Tipo de consulta</option>
-                        <option value="">Otro tipo</option>
-                        <option value="">Un tipo mas</option>
+                        <option value="otro">Otro tipo</option>
+                        <option value="otro">Un tipo mas</option>
                     </select>
                 </label>
                 <label for="cuerpo-mensaje">
                     <p class="label all-padded">Mensaje</p>
-                    <textarea name="cuerpo-mensaje" id="cuerpo-mensaje" class="block-textarea" placeholder="Escriba el mensaje que desea enviar"></textarea>
+                    <textarea name="cuerpo_mensaje" ng-model="cuerpo_mensaje" id="cuerpo-mensaje" class="block-textarea" placeholder="Escriba el mensaje que desea enviar" required></textarea>
                 </label>
+
+                <span class="error-message" ng-show="isSubmitted && !cuerpo_mensaje">Debe ingresar un mensaje</span>
+                <span class="error-message" ng-show="isSubmitted && sendError">Ocurrió un error enviando el mensaje</span>
 
                 <div class="wrapping">
                     <input class="btn green-btn" type="submit" value="Enviar"/>

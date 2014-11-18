@@ -12,7 +12,7 @@
   "datosPrivados" : true,
   "redesSociales" : {
     "twitter" : true,
-    "facebook" : false  
+    "facebook" : false
   },
   "clave" : "abcdefghi",
   "productos" : [{
@@ -154,6 +154,7 @@
                   "charts" : {
                         "fechaActualizada" : "17 / 07 / 2014",
                         "color" : "#003579",
+                        "fechas" : ["17 Mayo", "17 Junio", "17 Julio"],
                         "series" : [{
                                       "ano" : "2013",
                                       "data" : [200000, 400000, 600000]
@@ -219,6 +220,7 @@
                   "charts" : {
                         "fechaActualizada" : "17 / 07 / 2014",
                         "color" : "#003579",
+                        "fechas" : ["17 Mayo", "17 Junio", "17 Julio"],
                         "series" : [{
                                       "ano" : "2013",
                                       "data" : [200000, 400000, 600000]
@@ -282,14 +284,14 @@
                  "timestamp" : 56781999,
                  "visto" : false,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
-                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p><a href=\"http://www.example.com/\" class=\"ads orange-bg\" title=\"Ir al enlace\"><p class=\"small-text\">¿Deseas hacer una transferencia? ingresa a Transferencias del BCH</p><i class=\"icon big-next\"></i></a>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
                  "timestamp" : 56781998,
                  "visto" : false,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
-                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p><a href=\"http://www.example.com/\" class=\"ads orange-bg\" title=\"Ir al enlace\"><p class=\"small-text\">¿Deseas hacer una transferencia? ingresa a Transferencias del BCH</p><i class=\"icon big-next\"></i></a>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
@@ -303,7 +305,7 @@
                  "timestamp" : 56781996,
                  "visto" : true,
                  "titulo" : "Con tus compras gana un bono de Dólares-Premio",
-                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p>"
+                 "contenido" : "<p>Elige el destino que quieras y págalo de <strong>5 a 24 cuotas con una tasa preferencias de 0,89% (1)</strong>, sólo pagando con tus Tarjetas Travel Club del Chile en agencia Travel Club.</p><a href=\"http://www.example.com/\" class=\"ads orange-bg\" title=\"Ir al enlace\"><p class=\"small-text\">¿Deseas hacer una transferencia? ingresa a Transferencias del BCH</p><i class=\"icon big-next\"></i></a>"
                },{
                  "tipo" : "oferta",
                  "fecha" : "30 / 07 / 2014",
