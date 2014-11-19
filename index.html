@@ -9,15 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
-
-  <link rel="stylesheet/less" type="text/css" href="css/style.less" />
-  <script>
-    less = {
-      env: "development"
-    };
-  </script>
-  <script src="js/less.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <script src="js/jquery.js"></script>
     <script src="js/rut-validator.js"></script>
@@ -26,9 +18,9 @@
     <script src="js/angular-route.js"></script>
     <script src="js/highstock.js"></script> 
     <script src="js/highcharts-ng.js"></script>
-    <script type="text/javascript" src="js/modules/app.js"></script>
-    <script type="text/javascript" src="js/modules/highchart-app.js"></script>
-    <script type="text/javascript" src="js/controllers/saldos.js"></script>
+    <script src="js/modules/app.js"></script>
+    <script src="js/modules/highchart-app.js"></script>
+    <script src="js/controllers/saldos.js"></script>
 </head>
 <body ng-controller="saldosGetData" class="{{banco.slug}}" ng-class="{ 'dark-header' : !!innerView }">
   <section id="main-holder" class="main-content-holder app-class {{aplicacion.slug}} {{banco.slug}}" ng-class="{ 'dark-header' : !!innerView }" ng-view></section>

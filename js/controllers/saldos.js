@@ -84,8 +84,9 @@
             }
             return s.join(dec);
         }
-        //////////////////////////////////////////////////////////////////FILTROS
-        //Filtro para el formato de peso: $xxx.xxx.xxx
+
+    //////////////////////////////////////////////////////////////////FILTROS
+    //Filtro para el formato de peso: $xxx.xxx.xxx
     app.filter('pesos', function() {
             return function(input) {
                 var out = "";
@@ -98,7 +99,8 @@
         return $sce.trustAsHtml(htmlCode);
       }
     }]);
-        //////////////////////////////////////////////////////////////////SERVICIOS
+
+    //////////////////////////////////////////////////////////////////SERVICIOS
     app.service('productService', function() {
         var addProduct = function(producto) {
             currentProduct = producto;
@@ -313,13 +315,14 @@
             });
         }
         this.saldosGetUser();
+
         //Genera el gráfico de área solo si existe el gráfico y esta en la vista corriente o tarjeta
         if (angular.element('.chart').length > 0 && currentProduct.vista == 'corriente') {
             this.setChartCorriente();
         } else if (angular.element('.chart').length > 0 && currentProduct.vista == 'tarjeta') {
             this.setChartTarjeta();
         }
-        // this.setChartTarjeta();
+        
         ////////////////////////DELEGACIONES
 
         //Despliega el menú principal

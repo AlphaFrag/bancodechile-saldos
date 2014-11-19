@@ -1,13 +1,13 @@
 {
-  "banco": {
-    "name": "Banco Edwards",
-    "slug": "banco-edwards",
-    "logo": "img/logos/bancos/logo-banco-edwards.svg"
-  },
-  "aplicacion": {
-    "name" : "Saldos",
-    "slug" : "saldos",
-    "logo" : "img/logos/app/saldo-edwards.png",
-    "logoMin" : "img/logos/app/saldo-min.png"
-  }
+    "banco": {
+        "name": "Banco Edwards",
+        "slug": "banco-edwards",
+        "logo": "img/logos/bancos/logo-banco-edwards.svg"
+    },
+    "aplicacion": {
+        "name": "Saldos",
+        "slug": "saldos",
+        "logo": "img/logos/app/saldo-edwards.png",
+        "logoMin": "img/logos/app/saldo-min.png"
+    }
 }

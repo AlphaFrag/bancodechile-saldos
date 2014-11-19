@@ -47,7 +47,7 @@ saldosApp.config(['$routeProvider', '$controllerProvider', '$locationProvider',
             controller: 'mainController as main'
         }).
         otherwise({
-            templateUrl: 'templates/acceso.html'
+            templateUrl: 'partials/acceso.html'
         });
 
         $locationProvider.html5Mode(true);
