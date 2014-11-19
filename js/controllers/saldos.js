@@ -125,8 +125,9 @@
     //////////////////////////////////////////////////////////////////CONTROLADORES
     //Carga información del Banco y de la App
     app.controller("saldosGetData", function($scope, $location, $http) {
+        console.log( $location.path() );
         $scope.hasSubmenu = hasSubMenu( $location.path() );
-        $scope.innerView = ! ($location.path() === '/inicio');
+        $scope.innerView = ! ($location.path() === '/inicio' || $location.path() === '/');
 
         $scope.$on('$routeChangeSuccess', function(){
             angular.element('#main-holder').removeClass('deployed-menu');
@@ -134,9 +135,8 @@
             angular.element('#side-menu-button').removeClass('deployed-menu');
             
             $scope.hasSubmenu = hasSubMenu( $location.path() );
-            $scope.innerView = ! ($location.path() === '/inicio');
+            $scope.innerView = ! ($location.path() === '/inicio' || $location.path() === '/');
         });
-
 
         $http.get('model/generales.json').
         success(function(data, status, headers, config) {

@@ -1,13 +1,13 @@
 {
   "banco": {
-    "name": "Credichile",
-    "slug": "credichile",
-    "logo": "img/logos/bancos/logo-credichile.svg"
+    "name": "Banco Edwards",
+    "slug": "banco-edwards",
+    "logo": "img/logos/bancos/logo-banco-edwards.svg"
   },
   "aplicacion": {
     "name" : "Saldos",
     "slug" : "saldos",
-    "logo" : "img/logos/app/saldo-credichile.png",
+    "logo" : "img/logos/app/saldo-edwards.png",
     "logoMin" : "img/logos/app/saldo-min.png"
   }
 }

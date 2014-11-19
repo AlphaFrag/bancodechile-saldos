@@ -7,17 +7,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <!-- <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+  <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+  <link rel="stylesheet/less" type="text/css" href="css/style.less" />
   <script>
     less = {
       env: "development"
     };
   </script>
-  <script src="js/less.js"></script> -->
+  <script src="js/less.js"></script>
 
     <script src="js/jquery.js"></script>
     <script src="js/rut-validator.js"></script>
@@ -29,13 +29,10 @@
     <script type="text/javascript" src="js/modules/app.js"></script>
     <script type="text/javascript" src="js/modules/highchart-app.js"></script>
     <script type="text/javascript" src="js/controllers/saldos.js"></script>
-
 </head>
-<body ng-controller="saldosGetData" class="{{banco.slug}}" ng-class="{ 'dark-header' : innerView }">
-  <!-- <section id="main-holder" class="main-content-holder app-class {{aplicacion.slug}} {{banco.slug}}" ng-class="{'deployed-menu' : isDeployedMenu}" ng-view></section> -->
-  <section id="main-holder" class="main-content-holder app-class {{aplicacion.slug}} {{banco.slug}}" ng-class="{ 'dark-header' : innerView }" ng-view></section>
+<body ng-controller="saldosGetData" class="{{banco.slug}}" ng-class="{ 'dark-header' : !!innerView }">
+  <section id="main-holder" class="main-content-holder app-class {{aplicacion.slug}} {{banco.slug}}" ng-class="{ 'dark-header' : !!innerView }" ng-view></section>
 
-  
   <div ng-include="'partials/side-menu.html'" ng-if="hasSubmenu" ></div>
 </body>
 </html>

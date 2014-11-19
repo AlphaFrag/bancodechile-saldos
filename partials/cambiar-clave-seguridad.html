@@ -9,19 +9,20 @@
                 <p class="label">Ingresar clave actual</p>
                 <input id="claveActual" type="password" name="claveActual" ng-model="claveActual" ng-class="{'invalid-input': isValidPass === false}" placeholder="*****" required />
 
-                <span class="error-message" ng-show ="isValidPass === false">La clave es incorrecta</span>
+                <span class="error-message" ng-show="!claveActual && isSubmitted">Ingrese una clave</span>
+                <span class="error-message" ng-show="(isValidPass === false)">La clave es incorrecta</span>
             </label>
 
             <label for="claveNueva">
                 <p class="label">Clave internet</p>
-                <input id="claveNueva" type="password" name="claveNueva" ng-model="claveNueva" ng-class="{'invalid-input': claveNueva !== claveNuevaClone }" placeholder="*****" required />
-                <span class="error-message" ng-show ="claveNueva !== claveNuevaClone">Las claves no coinciden</span>
+                <input id="claveNueva" type="password" name="claveNueva" ng-model="claveNueva" ng-class="{'invalid-input': claveNueva && claveNueva !== claveNuevaClone && isSubmitted }" placeholder="*****" required />
+                <span class="error-message" ng-show="claveNueva && claveNueva !== claveNuevaClone && isSubmitted">Las claves no coinciden</span>
             </label>
 
             <label for="claveNuevaClone">
                 <p class="label">Clave internet</p>
-                <input id="claveNuevaClone" type="password" name="claveNuevaClone" ng-model="claveNuevaClone" ng-class="{'invalid-input': claveNueva !== claveNuevaClone}" placeholder="****" required />
-                <span class="error-message" ng-show ="claveNueva !== claveNuevaClone">Las claves no coinciden</span>
+                <input id="claveNuevaClone" type="password" name="claveNuevaClone" ng-model="claveNuevaClone" ng-class="{'invalid-input': claveNueva !== claveNuevaClone && isSubmitted}" placeholder="****" required />
+                <span class="error-message" ng-show="claveNueva !== claveNuevaClone && isSubmitted">Las claves no coinciden</span>
             </label>
 
             <div class="wrapping">
